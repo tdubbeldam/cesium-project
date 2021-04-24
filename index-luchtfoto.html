@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <title>Provincie Zeeland - Hoogtemetingen Kop van Schouwen</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="css/index.css" media="screen" rel="stylesheet" type="text/css" /> -->
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Widgets/lighter.css" rel="stylesheet">
+        <link href="css/app.css" media="screen" rel="stylesheet" type="text/css" />  
+        <style>
+            .fullSize 
+	    {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: none;
+                width: 100%;
+                height: 100%;
+            }
+
+            .fill-pz-red {background: #C2004B; color:#FFF;}
+  	    .toolbar-info {padding: 24px; margin: -24px -24px 24px -24px;}
+        </style>
+    </head>
+    <body>
+        <div id="cesiumContainer" class="fullSize"></div>
+        <div id="loadingOverlay" class="u-txt-center u-valign"><div class="spinner spinner-quart u-malign"></div></div>
+        <div id="toolbar">
+            <div class="toolbar-info fill-pz-red color-white">
+                <h1 class="toolbar-title u-vspace-m">Provincie Zeeland</h1>
+                <p>
+		Hoogtemetingen Kop van Schouwen,
+		luchtfoto's Zeeland 2020.
+		</p>
+            </div>
+            <ul class="toolbarOptions" data-bind="foreach: layers">
+		<!-- <li><input type="checkbox" id="shore_t1" name="shore_t1" onclick="toggleLayer('shore_t1', 0);">&nbsp;Imagery Shore T1</li>
+ 		<li><input type="checkbox" id="shore_t3" name="shore_t3" onclick="toggleLayer('shore_t3', 1);">&nbsp;Imagery Shore T3</li>
+                <li><hr></li> -->
+                <li><input type="button" id="button_T0" name="button_T0" onclick="setTerrain('terrainT0');" value="T0 2015 (?)"></li>
+				<li><input type="button" id="button_T1-T0" name="button_T1-T0" style="border-color: blue"; onclick="setTerrainT1_T0('terrainT1');" value="Verschil T1 - T0"></li>
+                <li><input type="button" id="button_T1" name="button_T1" onclick="setTerrain('terrainT1');" value="T1 2016 (?)"></li>
+				<li><input type="button" id="button_T2" name="button_T2" onclick="setTerrain('terrainT2');" value="T2 2017 (?)"></li>
+                <!-- <li><input type="button" id="button_T3" name="button_T3" onclick="setTerrain('terrainT3');" value="T3 SandMask augustus 2017"></li> -->
+				<li><input type="button" id="button_T4-T2" name="button_T4-T2" style="border-color: blue"; onclick="setTerrainT4_T2('terrainT4');" value="Verschil T4 - T2"></li>
+                <li><input type="button" id="button_T4" name="button_T4" onclick="setTerrain('terrainT4');" value="T4 maart 2018 (T0-A)"></li>
+				<li><input type="button" id="button_T5-T4" name="button_T5-T4" style="border-color: blue"; onclick="setTerrainT5_T4('terrainT5');" value="Verschil T5 - T4"></li>
+                <li><input type="button" id="button_T5" name="button_T5" onclick="setTerrain('terrainT5');" value="T5 augustus 2018"></li>
+				<li><input type="button" id="button_T6-T5" name="button_T6-T5" style="border-color: blue"; onclick="setTerrainT6_T5('terrainT6');" value="Verschil T6 - T5"></li>
+                <li><input type="button" id="button_T6" name="button_T6" onclick="setTerrain('terrainT6');" value="T6 september 2019"></li>
+				<li><input type="button" id="button_T7-T6" name="button_T7-T6" style="border-color: blue"; onclick="setTerrainT7_T6('terrainT7');" value="Verschil T7 - T6"></li>
+				<li><input type="button" id="button_T7" name="button_T7" onclick="setTerrain('terrainT7');" value="T7 oktober 2020"></li>
+                <!--<li><input type="button" id="button_S1" name="button_S1" style="background-color: red"; onclick="setTerrain('terrainS1');" value="Zeespiegelstijging 2 meter"></li> --> 
+            </ul>
+        </div>
+
+        <div id="camera" style="display:none"></div>
+
+        <script src="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Cesium.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="Source/App-luchtfoto.js"></script>
+    </body>
+</html>
