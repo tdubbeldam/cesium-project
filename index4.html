@@ -9,6 +9,7 @@
         <!-- <link href="css/index.css" media="screen" rel="stylesheet" type="text/css" /> -->
         <link href="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
         <link href="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Widgets/lighter.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="css/app.css" media="screen" rel="stylesheet" type="text/css" />  
         <style>
             .fullSize 
@@ -34,12 +35,17 @@
                 <h1 class="toolbar-title u-vspace-m">Provincie Zeeland</h1>
                 <p>
 		Hoogtemetingen Kop van Schouwen
-		</p>
-            </div>
-            <ul class="toolbarOptions" data-bind="foreach: layers">
-		<!-- <li><input type="checkbox" id="shore_t1" name="shore_t1" onclick="toggleLayer('shore_t1', 0);">&nbsp;Imagery Shore T1</li>
- 		<li><input type="checkbox" id="shore_t3" name="shore_t3" onclick="toggleLayer('shore_t3', 1);">&nbsp;Imagery Shore T3</li>
+        </p>
+        
+            </div>  
+            
+          <ul class="toolbarOptions" data-bind="foreach: layers">
+		    <!-- <li><input type="checkbox" id="shore_t1" name="shore_t1" onclick="toggleLayer('shore_t1', 0);">&nbsp;Imagery Shore T1</li>
+ 		    <li><input type="checkbox" id="shore_t3" name="shore_t3" onclick="toggleLayer('shore_t3', 1);">&nbsp;Imagery Shore T3</li>
                 <li><hr></li> -->
+                <li><input id="t1_2016" value="t1_2016" type="checkbox"> T1 2016<label class="label-success" for="t1_2016"></label></li>
+                <li><input id="t2_2017" value="t2_2017" type="checkbox"> T2 2017<label class="label-success" for="t2_2017"></label></li>
+                
                 <li><input type="button" id="button_T0" name="button_T0" onclick="setTerrain('terrainT0');" value="T0 2015 (?)"></li>
 				<li><input type="button" id="button_T1-T0" name="button_T1-T0" style="border-color: blue"; onclick="setTerrainT1_T0('terrainT1');" value="Verschil T1 - T0"></li>
                 <li><input type="button" id="button_T1" name="button_T1" onclick="setTerrain('terrainT1');" value="T1 2016 (?)"></li>
