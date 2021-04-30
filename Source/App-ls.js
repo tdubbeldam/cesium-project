@@ -129,7 +129,7 @@ function setTerrain(terrainProviderAlias)
 }
 
 // Layer on/off on the map
-$('#t1_2016').change(function(terrainProviderAlias){
+$('#t1_2016').change(function(){
   
   // check layer visibility
   if ($('input#t1_2016').is(':checked')) {
@@ -145,12 +145,12 @@ $('#t1_2016').change(function(terrainProviderAlias){
 }); // END layer on/of 
 
 // Layer on/off on the map
-$('#terrainT2').change(function(terrainProviderAlias){
+$('#t2_2017').change(function(){
   
   // check layer visibility
-  if ($('input#terrainT2').is(':checked')) {
+  if ($('input#t2_2017').is(':checked')) {
     // checked layer 
-    var terrainProvider= $('input#terrainT2').val();
+    var terrainProvider= $('input#t2_2017').val();
     // set Terrain on the map
     setTerrain(terrainProvider);
 
