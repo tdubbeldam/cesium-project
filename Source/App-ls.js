@@ -18,7 +18,7 @@ function setTerrain(terrainProviderAlias)
   var evilProvider = eval(terrainProviderAlias);
 	viewer.terrainProvider = evilProvider;
   
-  //viewer.imageryLayers.removeAll();
+  viewer.imageryLayers.removeAll();
   
   // now load the image_layer
       
@@ -135,6 +135,22 @@ $('#t1_2016').change(function(terrainProviderAlias){
   if ($('input#t1_2016').is(':checked')) {
     // checked layer 
     var terrainProvider= $('input#t1_2016').val();
+    // set Terrain on the map
+    setTerrain(terrainProvider);
+
+  } else{
+    //alert('layer OFF');
+    viewer.imageryLayers.removeAll();
+  }
+}); // END layer on/of 
+
+// Layer on/off on the map
+$('#terrainT2').change(function(terrainProviderAlias){
+  
+  // check layer visibility
+  if ($('input#terrainT2').is(':checked')) {
+    // checked layer 
+    var terrainProvider= $('input#terrainT2').val();
     // set Terrain on the map
     setTerrain(terrainProvider);
 
