@@ -21,13 +21,17 @@ $('#t1_2016').change(function(terrainProviderAlias){
     var evilProvider = eval(terrainProviderAlias);
     viewer.terrainProvider = evilProvider;
 
+    viewer.imageryLayers.removeAll();
+
     var terrainProviderAlias = $('input#t1_2016').val();
     
     if (terrainProviderAlias == 'terrainT1')
     {
       //laad de orto T1
-      var ZLDproviderT1 = new Cesium.WebMapServiceImageryProvider({url: OrthoPhotoServerWMSURL, layers :'Orthophoto_KVS_T1_10cm_RD_new_jpg'});
-      viewer.scene.imageryLayers.addImageryProvider(ZLDproviderT1);
+      // var ZLDproviderT1 = new Cesium.WebMapServiceImageryProvider({url: OrthoPhotoServerWMSURL, layers :'KVS_T3_201708_ORTHO_10cm_RD_new_JPEG'});
+      // alert(ZLDproviderT1);
+      // viewer.scene.imageryLayers.addImageryProvider(ZLDproviderT1);
+      viewer.imageryLayers.addImageryProvider(new Cesium.IonImageryProvider({ assetId : 3954 }));
         
     }
 
@@ -59,7 +63,8 @@ function setTerrain(terrainProviderAlias)
 	{
 		//viewer.imageryLayers.removeAll();
 		//laad de orto T1
-		var ZLDproviderT1 = new Cesium.WebMapServiceImageryProvider({url: OrthoPhotoServerWMSURL, layers :'Orthophoto_KVS_T1_10cm_RD_new_jpg'});
+    var ZLDproviderT1 = new Cesium.WebMapServiceImageryProvider({url: OrthoPhotoServerWMSURL, layers :'Orthophoto_KVS_T1_10cm_RD_new_jpg'});
+    alert(ZLDproviderT1);
 		viewer.scene.imageryLayers.addImageryProvider(ZLDproviderT1);
 		
 				
