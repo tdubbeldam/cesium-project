@@ -18,7 +18,7 @@ function setTerrain(terrainProviderAlias)
   var evilProvider = eval(terrainProviderAlias);
 	viewer.terrainProvider = evilProvider;
   
-  viewer.imageryLayers.removeAll();
+  //viewer.imageryLayers.removeAll();
   
   // now load the image_layer
       
