@@ -13,6 +13,31 @@ var terrainS1;
 
 var OrthoPhotoServerWMSURL = 'https://projectgeodata.zeeland.nl/geoserver/shore/wms?';
 
+// Layer on/off on the map
+$('#t1_2016').change(function(terrainProviderAlias){
+  // check layer visibility
+  if ($('input#t1_2016').is(':checked')) {
+    // alert('layer ON');
+    var evilProvider = eval(terrainProviderAlias);
+    viewer.terrainProvider = evilProvider;
+
+    var terrainProviderAlias = $('input#t1_2016').val();
+    
+    if (terrainProviderAlias == 'terrainT1')
+    {
+      //laad de orto T1
+      var ZLDproviderT1 = new Cesium.WebMapServiceImageryProvider({url: OrthoPhotoServerWMSURL, layers :'Orthophoto_KVS_T1_10cm_RD_new_jpg'});
+      viewer.scene.imageryLayers.addImageryProvider(ZLDproviderT1);
+        
+    }
+  
+  viewer.imageryLayers.removeAll();
+  } else{
+    //alert('layer OFF');
+    viewer.imageryLayers.removeAll();
+  }
+}); // END layer on/of 
+
 function setTerrain(terrainProviderAlias)
 {
   var evilProvider = eval(terrainProviderAlias);
