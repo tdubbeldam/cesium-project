@@ -36,7 +36,6 @@ function setTerrain(terrainProviderAlias)
 		//viewer.imageryLayers.removeAll();
 		//laad de orto T1
     var ZLDproviderT1 = new Cesium.WebMapServiceImageryProvider({url: OrthoPhotoServerWMSURL, layers :'Orthophoto_KVS_T1_10cm_RD_new_jpg'});
-    alert(ZLDproviderT1);
 		viewer.scene.imageryLayers.addImageryProvider(ZLDproviderT1);
 		
 				
