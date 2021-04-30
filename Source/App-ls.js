@@ -30,8 +30,7 @@ $('#t1_2016').change(function(terrainProviderAlias){
       viewer.scene.imageryLayers.addImageryProvider(ZLDproviderT1);
         
     }
-  
-  viewer.imageryLayers.removeAll();
+
   } else{
     //alert('layer OFF');
     viewer.imageryLayers.removeAll();
